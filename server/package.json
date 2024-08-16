@@ -1,13 +1,17 @@
 {
-    "name": "JATE",
+    "name": "pate",
     "version": "1.0.0",
-    "description": "",
+    "description": "PWA Presents - A Text Editor!",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon server.js --ignore client"
+        "start": "npm run server",
+        "server": "nodemon server.js --ignore client",
+        "client": "cd client && npm start",
+        "build": "cd client && npm run build",
+        "install": "cd client && npm install"
     },
     "keywords": [],
-    "author": "",
+    "author": "Jacob McAuliffe",
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.1",
