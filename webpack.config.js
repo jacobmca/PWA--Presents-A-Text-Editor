@@ -3,34 +3,31 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
 module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js'
+      main: './client/src/js/index.js',
+      install: './client/src/js/install.js'
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'client/dist'),
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
+        template: './client/index.html',
         title: 'PWA Presents - A Text Editor!',
       }),
       new InjectManifest({
-        swSrc: './src-sw.js',
+        swSrc: './client/src-sw.js',
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'PWA Presents - A Text Editor!',
-        short_name: 'J.A.T.E',
+        short_name: 'pate',
         description: 'A text editor that meets PWA criteria',
         background_color: '#225ca3',
         theme_color: '#225ca3',
@@ -38,7 +35,7 @@ module.exports = () => {
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('client/src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
