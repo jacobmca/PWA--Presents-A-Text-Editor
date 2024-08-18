@@ -19,37 +19,26 @@ To install, please clone this repository to your computer using the following st
 4. Press enter.
 
 ## Description
-This is an node/SQL-based employee tracking program that creates a database tracking yor company's departments, roles and employees via a SQL database.
-
-Using inquirer terminal commands, the user is not only able to view the company's departments, roles, and employees, but also add departments, roles, and employees. You can also update an employee's role within the company.
+This is a single-page, PWA text editor that allows the user to write and save text. It can be used both online in a browser, or installed and used offline locally.
 
 ## Usage
-First, ensure that the SQL database "company" is running by entering the following commands via the terminal:
+To run this program, enter the following commands into your terminal:
 
-psql -U postgres
-\i database/schema.sql
-\i database/seeds.sql
-\dt
+npm install
+npm run build
+npm start
 
-![Screenshot](assets/screenshots/screenshot1.png)
+Once the command line outputs that it's listening on localhost 3000, navigate to the aforementioned localhost. You should see the following:
 
-Once you have confirmed the database is running, navigate to server.js in your terminal and enter "node server.js" to get the program running.
+![Screenshot](assets/screenshot1.png)
 
-In your terminal, a list of commands will appear that you can navigate to. To select, scrolling over the desired command and press "enter."
+From here, you can add and remove text of your choice.
 
-![Screenshot](assets/screenshots/screenshot1.png)
+![Screenshot](assets/screenshot2.png)
 
-If you select "Add a department," follow the prompt to enter the name for the new department you are adding to the database.
+If you click the "install" button on the top left hand corner of the screen, you can also download the program and play it locally on your device.
 
-If you select "Add a role," follow the prompts to enter the name, salary, and department for the new role you are adding to the database.
-
-If you select "Add an employee," follow the prompts to enter the first name, last name, department, and manager for the new employee you are adding to the database.
-
-If you select "Update an employee role," follow the prompts to select the employee and the employee's new role.
-
-To exit the program, select "Exit" in the main list of prompts.
-
-[Please see this video demo.](https://drive.google.com/file/d/1PP3oA2emudyxFvhaZHXWfPYuwG45HWFN/view?usp=sharing) If unable to view, you can also find the video in assets/videos/screenrecording1.mov.
+Functionality is identical for both the browser-based and desktop-based versions of the program. Text data is saved to IndexDB and will reappear if you exit and reenter the program.
 
 ## Contributions
 When contributing to this repository, please reach out to me via e-mail to discuss the change you would like to make first. I am open to ideas both with regards to data stored in the tables and alterations to user interaction with the data.
@@ -61,7 +50,7 @@ This project is licensed under the MIT License. For more information, please see
 This program was created by Jacob McAuliffe for the UC Berkeley eDX Coding Boot Camp.
 
 ## Tests
-In the future, I would like to incorporate both more data within the tables, and further opportunities for user interaction with this data. Ideas for further data within the table include employment start date, list of any recognitions, vacation time available for the employee, annual bonus. Ideas for user interaction include being able to delete data from the tables, or extra data to create sub-tables within the database as needed.
+In the future, I would like to give the text editor greater functionality both with regards to the content of the text. Some ideas include the ability to include links, spellcheck words, change fonts/colors. Greater utility for how text is saved and used could also factor in. Incorporating the ability to turn texts into e-mails or upload to a specified drive or cloud could also prove useful.
 
 ## Questions
 If you have further questions, you can reach me at [mcauliffemedia@gmail.com](mailto:mcauliffemedia@gmail.com).
